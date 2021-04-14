@@ -112,6 +112,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
+				                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
 				         <includes>
            <include>**/Test*.java</include>
          </includes>
