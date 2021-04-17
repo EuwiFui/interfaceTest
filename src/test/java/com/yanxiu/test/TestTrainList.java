@@ -58,7 +58,7 @@ public class TestTrainList extends BaseCase {
 			
 			report = schema.validate(act);
 			String testResult = report.isSuccess()?"PASS":"FAIL";
-			 result.add(new Report(name,testResult,report.isSuccess()?"":report.toString()));
+			 result.add(new Report(name,testResult,report.isSuccess()?"N/A":report.toString()));
 			Assert.assertTrue(report.isSuccess(), report.toString());
 		   
 		   
