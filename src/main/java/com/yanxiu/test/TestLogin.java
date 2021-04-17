@@ -176,8 +176,8 @@ public class TestLogin {
 
 	@DataProvider(name = "loginInfo")
 	public Object[][] getLgoinInfo() {
-		final String fileName = "E:\\workspace\\YanxiuInterface\\test.yaml";
-
+		final String fileName = "test.yaml";
+		
 		Yaml yaml = new Yaml();
 		List<Map<String, Object>> testcases = new ArrayList<Map<String, Object>>();
 
@@ -203,6 +203,8 @@ public class TestLogin {
 			infos.add(name);
 			String url = (String) testcases.get(i).get("uri");
 			infos.add(url);
+			String method = (String) testcases.get(i).get("method");
+			infos.add(method);
 			Map<String, String> param = (Map<String, String>) testcases.get(i)
 					.get("param");
 
@@ -211,8 +213,7 @@ public class TestLogin {
 				params.append(key + "=" + String.valueOf(param.get(key)) + "&");
 			}
 			infos.add(params.toString());
-			String method = (String) testcases.get(i).get("method");
-			infos.add(method);
+
 			// System.out.println(testcases.get(i).get("expected"));
 			Map<String, Object> exp = (Map<String, Object>) testcases.get(i)
 					.get("expected");
@@ -233,6 +234,7 @@ public class TestLogin {
 	public void testLogin(String name, String url, String method, String param,
 			JSONObject expected) throws ClientProtocolException, IOException,
 			JSONException, InterruptedException, ProcessingException {
+		
 		if (method.equals("GET")) {
 			ResponseResult responseResult = HttpHelper.doGet(url + "?" + param);
 			JSONObject actual = responseResult.getBody();
@@ -247,7 +249,8 @@ public class TestLogin {
 			// System.out.println(re);
 			JsonSchema schema = factory.getJsonSchema(exp);
 			ProcessingReport report;
-
+			
+			
 			report = schema.validate(act);
 			Assert.assertTrue(report.isSuccess(), report.toString());
 

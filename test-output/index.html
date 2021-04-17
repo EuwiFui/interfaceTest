@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Administrator\AppData\Local\Temp\testng-eclipse-529894972\testng-customsuite.xml</span>
+                    <span>C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--1820816745\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.yanxiu.test.TestLogin" hash-for-method="testLogin(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&amp;passw...)">testLogin(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&passw...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,27 +116,22 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.yanxiu.test.TestLogin" hash-for-method="testLogin(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, password=123456&amp;, GET, {&quot;$schema&quot;:&quot;http:/...)">testLogin(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, password=123456&, GET, {"$schema":"http:/...)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.yanxiu.test.TestLogin" hash-for-method="testLogin(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, GET, password=123456&amp;, {&quot;$schema&quot;:&quot;http:/...)">testLogin(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, GET, password=123456&, {"$schema":"http:/...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.yanxiu.test.TestLogin" hash-for-method="testLogin(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&amp;password=1...)">testLogin(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&password=1...)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.yanxiu.test.TestLogin" hash-for-method="testLogin(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, GET, loginName=XY78&amp;password=123456&amp;, {&quot;$...)">testLogin(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, GET, loginName=XY78&password=123456&, {"$...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.yanxiu.test.TestLogin" hash-for-method="testLogin(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, loginName=XY78&amp;password=123456&amp;, GET, {&quot;$...)">testLogin(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, loginName=XY78&password=123456&, GET, {"$...)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.yanxiu.test.TestLogin" hash-for-method="testLogin(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com...)">testLogin(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.yanxiu.test.TestLogin" hash-for-method="testLogin(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&amp;pass...)">testLogin(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&pass...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.yanxiu.test.TestLogin" hash-for-method="testLogin(testLoginWithoutPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&amp;, GET, {&quot;$...)">testLogin(testLoginWithoutPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&, GET, {"$...)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.yanxiu.test.TestLogin" hash-for-method="testLogin(testLoginWithoutPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&amp;, {&quot;$...)">testLogin(testLoginWithoutPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&, {"$...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -137,6 +146,65 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.yanxiu.test.TestLogin</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&amp;passw...)">
+                  </a> <!-- testLogin(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&passw...) -->
+                  <span class="method-name">testLogin</span>
+                  <span class="parameters">(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&password=123456&, {"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"head":{"type":"string"},"uid":{"type":"integer"},"code":{"type":"integer","enum":[1]},"debug":{"type":"string"},"data":{"type":"string"},"uname":{"type":"string"},"actiFlag":{"type":"integer"},"desc":{"type":"string"},"token":{"type":"string"}},"required":["code","data","desc","token","actiFlag","uid","uname","head","debug"]})</span>
+                  <div class="stack-trace">java.lang.AssertionError: com.github.fge.jsonschema.core.report.ListProcessingReport: failure
+--- BEGIN MESSAGES ---
+error: instance value (0) not found in enum (possible values: [1])
+    level: &quot;error&quot;
+    schema: {&quot;loadingURI&quot;:&quot;#&quot;,&quot;pointer&quot;:&quot;/properties/code&quot;}
+    instance: {&quot;pointer&quot;:&quot;/code&quot;}
+    domain: &quot;validation&quot;
+    keyword: &quot;enum&quot;
+    value: 0
+    enum: [1]
+---  END MESSAGES  ---
+ expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at com.yanxiu.test.TestLogin.testLogin(TestLogin.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:100)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:811)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1129)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:746)
+	at org.testng.TestRunner.run(TestRunner.java:600)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1264)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1189)
+	at org.testng.TestNG.runSuites(TestNG.java:1104)
+	at org.testng.TestNG.run(TestNG.java:1076)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:152)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:57)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -145,42 +213,34 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testLogin(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, password=123456&amp;, GET, {&quot;$schema&quot;:&quot;http:/...)">
-                  </a> <!-- testLogin(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, password=123456&, GET, {"$schema":"http:/...) -->
+                  <a name="testLogin(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, GET, password=123456&amp;, {&quot;$schema&quot;:&quot;http:/...)">
+                  </a> <!-- testLogin(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, GET, password=123456&, {"$schema":"http:/...) -->
                   <span class="method-name">testLogin</span>
-                  <span class="parameters">(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, password=123456&, GET, {"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"code":{"type":"integer","enum":[1]},"data":{"type":"string"},"desc":{"type":"string","enum":["登录名和密码必填"]}},"required":["code","data","desc"]})</span>
+                  <span class="parameters">(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, GET, password=123456&, {"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"code":{"type":"integer","enum":[1]},"data":{"type":"string"},"desc":{"type":"string","enum":["登录名和密码必填"]}},"required":["code","data","desc"]})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testLogin(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&amp;password=1...)">
-                  </a> <!-- testLogin(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&password=1...) -->
+                  <a name="testLogin(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, GET, loginName=XY78&amp;password=123456&amp;, {&quot;$...)">
+                  </a> <!-- testLogin(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, GET, loginName=XY78&password=123456&, {"$...) -->
                   <span class="method-name">testLogin</span>
-                  <span class="parameters">(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&password=123456&, GET, {"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"head":{"type":"string"},"uid":{"type":"integer"},"code":{"type":"integer","enum":[0]},"debug":{"type":"string"},"data":{"type":"string"},"uname":{"type":"string"},"actiFlag":{"type":"integer"},"desc":{"type":"string"},"token":{"type":"string"}},"required":["code","data","desc","token","actiFlag","uid","uname","head","debug"]})</span>
+                  <span class="parameters">(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, GET, loginName=XY78&password=123456&, {"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"code":{"type":"integer","enum":[1]},"data":{"type":"string"},"desc":{"type":"string","enum":["用户不存在"]}},"required":["code","data","desc"]})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testLogin(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, loginName=XY78&amp;password=123456&amp;, GET, {&quot;$...)">
-                  </a> <!-- testLogin(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, loginName=XY78&password=123456&, GET, {"$...) -->
+                  <a name="testLogin(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com...)">
+                  </a> <!-- testLogin(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com...) -->
                   <span class="method-name">testLogin</span>
-                  <span class="parameters">(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, loginName=XY78&password=123456&, GET, {"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"code":{"type":"integer","enum":[1]},"data":{"type":"string"},"desc":{"type":"string","enum":["用户不存在"]}},"required":["code","data","desc"]})</span>
+                  <span class="parameters">(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&password=12345&, {"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"code":{"type":"integer","enum":[1]},"data":{"type":"string"},"desc":{"type":"string","enum":["密码错误"]}},"required":["code","data","desc"]})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testLogin(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&amp;pass...)">
-                  </a> <!-- testLogin(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&pass...) -->
+                  <a name="testLogin(testLoginWithoutPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&amp;, {&quot;$...)">
+                  </a> <!-- testLogin(testLoginWithoutPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&, {"$...) -->
                   <span class="method-name">testLogin</span>
-                  <span class="parameters">(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&password=12345&, GET, {"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"code":{"type":"integer","enum":[1]},"data":{"type":"string"},"desc":{"type":"string","enum":["密码错误"]}},"required":["code","data","desc"]})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testLogin(testLoginWithoutPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&amp;, GET, {&quot;$...)">
-                  </a> <!-- testLogin(testLoginWithoutPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&, GET, {"$...) -->
-                  <span class="method-name">testLogin</span>
-                  <span class="parameters">(testLoginWithoutPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&, GET, {"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"code":{"type":"integer","enum":[1]},"data":{"type":"string"},"desc":{"type":"string","enum":["登录名和密码必填"]}},"required":["code","data","desc"]})</span>
+                  <span class="parameters">(testLoginWithoutPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&, {"$schema":"http://json-schema.org/draft-04/schema#","type":"object","properties":{"code":{"type":"integer","enum":[1]},"data":{"type":"string"},"desc":{"type":"string","enum":["登录名和密码必填"]}},"required":["code","data","desc"]})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -188,7 +248,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\testng-eclipse-529894972\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--1820816745\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -245,28 +305,28 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testLogin')
 data.setCell(0, 2, 'com.yanxiu.test.TestLogin')
-data.setCell(0, 3, 11);
+data.setCell(0, 3, 1016);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testLogin')
 data.setCell(1, 2, 'com.yanxiu.test.TestLogin')
-data.setCell(1, 3, 4);
+data.setCell(1, 3, 46);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testLogin')
 data.setCell(2, 2, 'com.yanxiu.test.TestLogin')
-data.setCell(2, 3, 3);
+data.setCell(2, 3, 44);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'testLogin')
 data.setCell(3, 2, 'com.yanxiu.test.TestLogin')
-data.setCell(3, 3, 3);
+data.setCell(3, 3, 38);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'testLogin')
 data.setCell(4, 2, 'com.yanxiu.test.TestLogin')
-data.setCell(4, 3, 2);
+data.setCell(4, 3, 31);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 23 ms</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -294,24 +354,26 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.yanxiu.test.TestLogin</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">testLogin(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&password=1...)</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testLogin(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&passw...)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testLogin(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&pass...)</span>
-                <span class="method-start">13 ms</span>
+                <span class="method-name">testLogin(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com...)</span>
+                <span class="method-start">1020 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testLogin(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, loginName=XY78&password=123456&, GET, {"$...)</span>
-                <span class="method-start">19 ms</span>
+                <span class="method-name">testLogin(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, GET, loginName=XY78&password=123456&, {"$...)</span>
+                <span class="method-start">1067 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testLogin(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, password=123456&, GET, {"$schema":"http:/...)</span>
-                <span class="method-start">23 ms</span>
+                <span class="method-name">testLogin(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, GET, password=123456&, {"$schema":"http:/...)</span>
+                <span class="method-start">1113 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">testLogin(testLoginWithoutPassword, http://u.yanxiu.com/login.json, loginName=XY02735506@yanxiu.com&, GET, {"$...)</span>
-                <span class="method-start">32 ms</span>
+                <span class="method-name">testLogin(testLoginWithoutPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&, {"$...)</span>
+                <span class="method-start">1146 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

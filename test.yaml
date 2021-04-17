@@ -11,7 +11,7 @@
     "code": {
       "type": "integer",
        "enum": [
-        0
+        1
       ]
     },
     "data": {
