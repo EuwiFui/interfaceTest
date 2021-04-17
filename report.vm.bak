@@ -2,22 +2,32 @@
 <title>test result</title> 
 <body> 
 <h1 align="center">Test Result</h1>
-<h3 >$date<h3>
+<h4 >$date<h4>
 <table border="1">
 <tr>
-<td>id</td>
-<td>name</td>
-<td>result</td>
-<td>reason</td>
+<td width="32">编号</td>
+<td width="200">接口</td>
+<td width="200">用例名称</td>
+<td width="64">请求方式</td>
+<td width="64">参数</td>
+<td width="64">测试结果</td>
+<td>失败原因</td>
 
 </tr>
 <tr>
 
-#set($i=1)
 
 <tbody>
 #foreach( $obj in $objs )
-    <tr><td>$velocityCount</td><td>$obj.name</td><td>$obj.result</td><td>$obj.reason</td></tr>
+    <tr>
+    <td>$velocityCount</td>
+    <td>$obj.url</td>
+    <td>$obj.name</td>
+	<td>$obj.method</td>
+	<td>$obj.params</td>
+    <td>$obj.result</td>
+    <td>$obj.reason</td>
+    </tr>
 
 #end
 <tbody>

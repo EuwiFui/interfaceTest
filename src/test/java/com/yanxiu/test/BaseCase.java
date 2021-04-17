@@ -2,14 +2,17 @@ package com.yanxiu.test;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.velocity.Template;
@@ -53,7 +56,9 @@ public class BaseCase {
 	public void setUp() throws Exception{
 		System.out.println("this is in before test");
 	    ve = new VelocityEngine();
-		ve.init();
+	    Properties props = new Properties();
+	    props.put("input.encoding", "utf-8");
+		ve.init(props);
 		t = ve.getTemplate("report.vm"); 
 		context = new VelocityContext();
 	}
@@ -159,8 +164,8 @@ public class BaseCase {
 		  }
 		  else
 		  {resultFile.delete();}
-		  FileWriter fileWritter = new FileWriter(resultFile.getName(),true);
-        BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
+//		  FileWriter fileWritter = new FileWriter(resultFile.getName(),true);
+        BufferedWriter bufferWritter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(resultFile),"UTF-8"));
         bufferWritter.write(writer.toString());
         bufferWritter.close();
 		System.out.println(writer.toString());
@@ -186,7 +191,8 @@ public class BaseCase {
 			
 			report = schema.validate(act);
 			String testResult = report.isSuccess()?"PASS":"FAIL";
-			 result.add(new Report(name,testResult,report.isSuccess()?"N/A":report.toString()));
+			
+			 result.add(new Report(url,name,method,param,testResult,report.isSuccess()?"N/A":report.toString()));
 			Assert.assertTrue(report.isSuccess(), report.toString());
 
 			 

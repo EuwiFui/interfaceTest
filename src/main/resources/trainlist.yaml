@@ -1,4 +1,4 @@
-- name: testTrainMultiProjects
+- name: 测试一个账号下有多个项目
   method: GET
   uri: http://mobile.yanxiu.com/v20/api/guopei/trainlist
   token: 
@@ -88,7 +88,7 @@
   ]
 }
 
-- name: testTrainHasNoProject
+- name: 测试一个账号下没有项目
   method: GET
   uri: http://mobile.yanxiu.com/v20/api/guopei/trainlist
   token: 

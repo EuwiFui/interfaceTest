@@ -1,4 +1,4 @@
-- name: 使用正确的用户名密码登录
+- name: testLoginwithCorrectInfo
   method: GET
   uri: http://u.yanxiu.com/login.json
   param:
@@ -52,7 +52,7 @@
   ]
 }
 
-- name: 使用错误的密码登录
+- name: testLoginwithIncorrectPassword
   method: GET
   uri: http://u.yanxiu.com/login.json
   param:
@@ -85,7 +85,7 @@
   ]
 }
     
-- name: 使用不存在的账号登录
+- name: testLoginwithNonExistUser
   method: GET
   uri: http://u.yanxiu.com/login.json
   param:
@@ -118,7 +118,7 @@
   ]
 }
      
-- name: 用户名为空时登录
+- name: testLoginWithoutLoginName
   method: GET
   uri: http://u.yanxiu.com/login.json
   param:
@@ -150,7 +150,7 @@
   ]
 }
  
-- name: 密码为空时登录
+- name: testLoginWithoutPassword
   method: GET
   uri: http://u.yanxiu.com/login.json
   param: 
