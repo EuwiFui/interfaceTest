@@ -89,11 +89,7 @@
 
   <build>
   <sourceDirectory>src</sourceDirectory>
-   <resources>
-     <resource>
-       <directory>src/main/resources</directory>
-     </resource>
-	 </resources>
+
         <plugins>
             <!-- 添加插件 关联testNg.xml -->
             <plugin>

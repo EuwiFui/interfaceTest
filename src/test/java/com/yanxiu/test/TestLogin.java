@@ -18,6 +18,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.yaml.snakeyaml.Yaml;
@@ -30,6 +32,7 @@ import com.github.fge.jsonschema.main.JsonSchemaFactory;
 
 import com.yanxiu.common.HttpHelper;
 import com.yanxiu.common.ResponseResult;
+import com.yanxiu.result.Report;
 
 
 
@@ -39,7 +42,7 @@ import com.yanxiu.common.ResponseResult;
 //import org.skyscreamer.jsonassert.JSONCompareMode;
 //import org.skyscreamer.jsonassert.JSONCompareResult;
 
-public class TestLogin {
+public class TestLogin extends BaseCase{
 
 	/*
 	 * @Test public void testLoginWithCorrectInfo() throws
@@ -175,64 +178,14 @@ public class TestLogin {
 	// }
 	// return false;
 	// }
-
-	@DataProvider(name = "loginInfo")
-	public Object[][] getLgoinInfo() {
-		final String fileName = "/test.yaml";
-		
-		Yaml yaml = new Yaml();
-		List<Map<String, Object>> testcases = new ArrayList<Map<String, Object>>();
-
-		try {
-//			InputStream ios = new FileInputStream(new File(fileName));
-			InputStream ios = TestLogin.class.getResourceAsStream(fileName);
-			// Parse the YAML file and return the output as a series of Maps and
-			// Lists
-
-			testcases = (List<Map<String, Object>>) yaml.load(ios);
-			// System.out.println(testcases.toString());
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		List<Object> infos = new ArrayList<Object>();
-		Object[][] loginInfo = new Object[testcases.size()][5];
-
-		for (int i = 0; i < testcases.size(); i++) {
-
-			String name = (String) testcases.get(i).get("name");
-			infos.add(name);
-			String url = (String) testcases.get(i).get("uri");
-			infos.add(url);
-			String method = (String) testcases.get(i).get("method");
-			infos.add(method);
-			Map<String, String> param = (Map<String, String>) testcases.get(i)
-					.get("param");
-
-			StringBuilder params = new StringBuilder();
-			for (String key : param.keySet()) {
-				params.append(key + "=" + String.valueOf(param.get(key)) + "&");
-			}
-			infos.add(params.toString());
-
-			// System.out.println(testcases.get(i).get("expected"));
-			Map<String, Object> exp = (Map<String, Object>) testcases.get(i)
-					.get("expected");
-			JSONObject expected = new JSONObject(exp);
-			infos.add(expected);
-			
-			for (int j = 0; j < infos.size(); j++) {
-
-				loginInfo[i][j] = infos.get(j);
-			}
-			infos.clear();
-
-		}
-		return loginInfo;
+	@BeforeClass
+	public void setUp(){
+		System.out.println("set file name");
+		super.setFileName("/test.yaml");
 	}
 
-	@Test(dataProvider = "loginInfo")
+
+	@Test(dataProvider = "paramInfo")
 	public void testLogin(String name, String url, String method, String param,
 			JSONObject expected) throws ClientProtocolException, IOException,
 			JSONException, InterruptedException, ProcessingException {
@@ -254,8 +207,11 @@ public class TestLogin {
 			
 			
 			report = schema.validate(act);
+			String testResult = report.isSuccess()?"PASS":"FAIL";
+			 result.add(new Report(name,testResult,report.isSuccess()?"":report.toString()));
 			Assert.assertTrue(report.isSuccess(), report.toString());
 
+			 
 			// JSONCompareResult result = JSONCompare.compareJSON(expected,
 			// actual, JSONCompareMode.LENIENT);
 			//

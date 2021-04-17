@@ -1,0 +1,45 @@
+<html> 
+<title>test result</title> 
+<body> 
+<table border="1">
+<tr>
+<td>id</td>
+<td>name</td>
+<td>result</td>
+<td>reason</td>
+
+</tr>
+<tr>
+
+
+<tbody>
+    <tr><td>1</td><td>testLoginwithCorrectInfo</td><td>FAIL</td><td>com.github.fge.jsonschema.core.report.ListProcessingReport: failure
+--- BEGIN MESSAGES ---
+error: instance value (0) not found in enum (possible values: [1])
+    level: "error"
+    schema: {"loadingURI":"#","pointer":"/properties/code"}
+    instance: {"pointer":"/code"}
+    domain: "validation"
+    keyword: "enum"
+    value: 0
+    enum: [1]
+---  END MESSAGES  ---
+</td></tr>
+
+    <tr><td>2</td><td>testLoginwithIncorrectPassword</td><td>PASS</td><td></td></tr>
+
+    <tr><td>3</td><td>testLoginwithNonExistUser</td><td>PASS</td><td></td></tr>
+
+    <tr><td>4</td><td>testLoginWithoutLoginName</td><td>PASS</td><td></td></tr>
+
+    <tr><td>5</td><td>testLoginWithoutPassword</td><td>PASS</td><td></td></tr>
+
+    <tr><td>6</td><td>testTrainMultiProjects</td><td>PASS</td><td></td></tr>
+
+    <tr><td>7</td><td>testTrainHasNoProject</td><td>PASS</td><td></td></tr>
+
+<tbody>
+</tr>
+</table>
+</body>
+</html>

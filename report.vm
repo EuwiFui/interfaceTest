@@ -1,0 +1,25 @@
+<html> 
+<title>test result</title> 
+<body> 
+<table border="1">
+<tr>
+<td>id</td>
+<td>name</td>
+<td>result</td>
+<td>reason</td>
+
+</tr>
+<tr>
+
+#set($i=1)
+
+<tbody>
+#foreach( $obj in $objs )
+    <tr><td>$velocityCount</td><td>$obj.name</td><td>$obj.result</td><td>$obj.reason</td></tr>
+
+#end
+<tbody>
+</tr>
+</table>
+</body>
+</html>

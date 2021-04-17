@@ -3,11 +3,23 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
+      <class name="com.yanxiu.test.TestTrainList">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.yanxiu.test.TestTrainList -->
       <class name="com.yanxiu.test.TestLogin">
         <methods>
+          <include name="tearDown"/>
           <include name="testLogin" invocation-numbers="0"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- com.yanxiu.test.TestLogin -->
+      <class name="com.yanxiu.test.BaseCase">
+        <methods>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.yanxiu.test.BaseCase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

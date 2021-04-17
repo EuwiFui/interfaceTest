@@ -1,0 +1,142 @@
+- name: testTrainMultiProjects
+  method: GET
+  uri: http://mobile.yanxiu.com/v20/api/guopei/trainlist
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456
+  param:     
+     os: 0
+     ver: 2.0
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string",
+      "enum": [
+        "0"
+      ]
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string",
+      "enum": [
+        "返回数据成功"
+      ]
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "string"
+        },
+        "trains": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "BaseBeanCreateTime": {
+                "type": "integer"
+              },
+              "pid": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "pic": {
+                "type": "string"
+              },
+              "w": {
+                "type": "string",
+                 "enum": [
+                  "1","2","3","4"
+                ]
+              },
+              "status": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "BaseBeanCreateTime",
+              "pid",
+              "name",
+              "pic",
+              "w",
+              "status"
+            ]
+          }
+        }
+      },
+      "required": [
+        "total",
+        "trains"
+      ]
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc",
+    "body"
+  ]
+}
+
+- name: testTrainHasNoProject
+  method: GET
+  uri: http://mobile.yanxiu.com/v20/api/guopei/trainlist
+  token: 
+     loginName: 15810653918
+     password: 123456
+  param:     
+     os: 0
+     ver: 2.0
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string"
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "string",
+           "enum": ["0"]
+        },
+        "trains": {
+          "type": "array",
+          "items": {},
+          "maxLength": 0
+        }
+      },
+      "required": [
+        "total",
+        "trains"
+      ]
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc",
+    "body"
+  ]
+}
