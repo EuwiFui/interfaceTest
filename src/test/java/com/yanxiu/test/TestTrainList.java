@@ -38,33 +38,11 @@ public class TestTrainList extends BaseCase {
 	@Test(dataProvider = "paramInfo")
 	public void testTrainList(String name, String url, String method, String param,
 			JSONObject expected) throws Exception {
-		
-		if (method.equals("GET")) {
-			
-			ResponseResult responseResult = HttpHelper.doGet(url + "?" + param);
-			JSONObject actual = responseResult.getBody();
-
-			ObjectMapper mapper = new ObjectMapper();
-			JsonNode exp = mapper.readTree(expected.toString());
-			JsonNode act = mapper.readTree(actual.toString());
-			
-			JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
-			// ProcessingReport re =
-			// factory.getSyntaxValidator().validateSchema(exp);
-			// System.out.println(re);
-			JsonSchema schema = factory.getJsonSchema(exp);
-			ProcessingReport report;
-			
-			
-			report = schema.validate(act);
-			String testResult = report.isSuccess()?"PASS":"FAIL";
-			 result.add(new Report(name,testResult,report.isSuccess()?"N/A":report.toString()));
-			Assert.assertTrue(report.isSuccess(), report.toString());
-		   
+		super.runCase(name, url, method, param, expected);
 		   
 		}
 		
 
 	}
 	
-}
+

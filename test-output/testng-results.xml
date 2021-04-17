@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" total="7" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4486" started-at="2016-09-26T08:09:05Z" finished-at="2016-09-26T08:09:09Z">
+  <suite name="Default suite" duration-ms="1979" started-at="2016-09-26T08:38:33Z" finished-at="2016-09-26T08:38:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4486" started-at="2016-09-26T08:09:05Z" finished-at="2016-09-26T08:09:09Z">
+    <test name="Default test" duration-ms="1979" started-at="2016-09-26T08:38:33Z" finished-at="2016-09-26T08:38:35Z">
       <class name="com.yanxiu.test.TestTrainList">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.yanxiu.test.TestTrainList@7085bdee]" name="setUp" is-config="true" duration-ms="1" started-at="2016-09-26T16:09:07Z" finished-at="2016-09-26T16:09:07Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.yanxiu.test.TestTrainList@31a5c39e]" name="setUp" is-config="true" duration-ms="1" started-at="2016-09-26T16:38:35Z" finished-at="2016-09-26T16:38:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testTrainList(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestTrainList@7085bdee]" name="testTrainList" duration-ms="170" started-at="2016-09-26T16:09:08Z" data-provider="paramInfo" finished-at="2016-09-26T16:09:08Z">
+        <test-method status="PASS" signature="testTrainList(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestTrainList@31a5c39e]" name="testTrainList" duration-ms="80" started-at="2016-09-26T16:38:35Z" data-provider="paramInfo" finished-at="2016-09-26T16:38:35Z">
           <params>
             <param index="0">
               <value>
@@ -42,7 +42,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTrainList -->
-        <test-method status="PASS" signature="testTrainList(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestTrainList@7085bdee]" name="testTrainList" duration-ms="1633" started-at="2016-09-26T16:09:08Z" data-provider="paramInfo" finished-at="2016-09-26T16:09:09Z">
+        <test-method status="PASS" signature="testTrainList(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestTrainList@31a5c39e]" name="testTrainList" duration-ms="39" started-at="2016-09-26T16:38:35Z" data-provider="paramInfo" finished-at="2016-09-26T16:38:35Z">
           <params>
             <param index="0">
               <value>
@@ -75,11 +75,11 @@
         </test-method> <!-- testTrainList -->
       </class> <!-- com.yanxiu.test.TestTrainList -->
       <class name="com.yanxiu.test.TestLogin">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.yanxiu.test.TestLogin@73ad2d6]" name="setUp" is-config="true" duration-ms="0" started-at="2016-09-26T16:09:05Z" finished-at="2016-09-26T16:09:05Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.yanxiu.test.TestLogin@5f2108b5]" name="setUp" is-config="true" duration-ms="0" started-at="2016-09-26T16:38:33Z" finished-at="2016-09-26T16:38:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestLogin@73ad2d6]" name="testLogin" duration-ms="1269" started-at="2016-09-26T16:09:05Z" data-provider="paramInfo" finished-at="2016-09-26T16:09:06Z">
+        <test-method status="FAIL" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestLogin@5f2108b5]" name="testLogin" duration-ms="1089" started-at="2016-09-26T16:38:33Z" data-provider="paramInfo" finished-at="2016-09-26T16:38:34Z">
           <params>
             <param index="0">
               <value>
@@ -138,7 +138,8 @@ error: instance value (0) not found in enum (possible values: [1])
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:513)
 	at org.testng.Assert.assertTrue(Assert.java:42)
-	at com.yanxiu.test.TestLogin.testLogin(TestLogin.java:212)
+	at com.yanxiu.test.BaseCase.runCase(BaseCase.java:190)
+	at com.yanxiu.test.TestLogin.testLogin(TestLogin.java:193)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -170,7 +171,7 @@ error: instance value (0) not found in enum (possible values: [1])
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestLogin@73ad2d6]" name="testLogin" duration-ms="303" started-at="2016-09-26T16:09:06Z" data-provider="paramInfo" finished-at="2016-09-26T16:09:07Z">
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestLogin@5f2108b5]" name="testLogin" duration-ms="61" started-at="2016-09-26T16:38:35Z" data-provider="paramInfo" finished-at="2016-09-26T16:38:35Z">
           <params>
             <param index="0">
               <value>
@@ -201,7 +202,7 @@ error: instance value (0) not found in enum (possible values: [1])
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestLogin@73ad2d6]" name="testLogin" duration-ms="383" started-at="2016-09-26T16:09:07Z" data-provider="paramInfo" finished-at="2016-09-26T16:09:07Z">
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestLogin@5f2108b5]" name="testLogin" duration-ms="42" started-at="2016-09-26T16:38:35Z" data-provider="paramInfo" finished-at="2016-09-26T16:38:35Z">
           <params>
             <param index="0">
               <value>
@@ -232,7 +233,7 @@ error: instance value (0) not found in enum (possible values: [1])
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestLogin@73ad2d6]" name="testLogin" duration-ms="120" started-at="2016-09-26T16:09:07Z" data-provider="paramInfo" finished-at="2016-09-26T16:09:07Z">
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestLogin@5f2108b5]" name="testLogin" duration-ms="34" started-at="2016-09-26T16:38:35Z" data-provider="paramInfo" finished-at="2016-09-26T16:38:35Z">
           <params>
             <param index="0">
               <value>
@@ -263,7 +264,7 @@ error: instance value (0) not found in enum (possible values: [1])
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestLogin@73ad2d6]" name="testLogin" duration-ms="129" started-at="2016-09-26T16:09:07Z" data-provider="paramInfo" finished-at="2016-09-26T16:09:07Z">
+        <test-method status="PASS" signature="testLogin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, org.json.JSONObject)[pri:0, instance:com.yanxiu.test.TestLogin@5f2108b5]" name="testLogin" duration-ms="152" started-at="2016-09-26T16:38:35Z" data-provider="paramInfo" finished-at="2016-09-26T16:38:35Z">
           <params>
             <param index="0">
               <value>
@@ -294,13 +295,13 @@ error: instance value (0) not found in enum (possible values: [1])
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.yanxiu.test.TestLogin@73ad2d6]" name="tearDown" is-config="true" duration-ms="20" started-at="2016-09-26T16:09:09Z" finished-at="2016-09-26T16:09:09Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.yanxiu.test.TestLogin@5f2108b5]" name="tearDown" is-config="true" duration-ms="10" started-at="2016-09-26T16:38:35Z" finished-at="2016-09-26T16:38:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.yanxiu.test.TestLogin -->
       <class name="com.yanxiu.test.BaseCase">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.yanxiu.test.BaseCase@3fee9989]" name="setUp" is-config="true" duration-ms="125" started-at="2016-09-26T16:09:05Z" finished-at="2016-09-26T16:09:05Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.yanxiu.test.BaseCase@e45f292]" name="setUp" is-config="true" duration-ms="212" started-at="2016-09-26T16:38:33Z" finished-at="2016-09-26T16:38:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->

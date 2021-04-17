@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Administrator\AppData\Local\Temp\testng-eclipse-266917076\testng-customsuite.xml</span>
+                    <span>C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--1794655663\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -183,7 +183,8 @@ error: instance value (0) not found in enum (possible values: [1])
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:513)
 	at org.testng.Assert.assertTrue(Assert.java:42)
-	at com.yanxiu.test.TestLogin.testLogin(TestLogin.java:212)
+	at com.yanxiu.test.BaseCase.runCase(BaseCase.java:190)
+	at com.yanxiu.test.TestLogin.testLogin(TestLogin.java:193)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -282,7 +283,7 @@ error: instance value (0) not found in enum (possible values: [1])
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\testng-eclipse-266917076\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Administrator\AppData\Local\Temp\testng-eclipse--1794655663\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -338,38 +339,38 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(7);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testTrainList')
-data.setCell(0, 2, 'com.yanxiu.test.TestTrainList')
-data.setCell(0, 3, 1633);
+data.setCell(0, 1, 'testLogin')
+data.setCell(0, 2, 'com.yanxiu.test.TestLogin')
+data.setCell(0, 3, 1089);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testLogin')
 data.setCell(1, 2, 'com.yanxiu.test.TestLogin')
-data.setCell(1, 3, 1269);
+data.setCell(1, 3, 152);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testLogin')
-data.setCell(2, 2, 'com.yanxiu.test.TestLogin')
-data.setCell(2, 3, 383);
+data.setCell(2, 1, 'testTrainList')
+data.setCell(2, 2, 'com.yanxiu.test.TestTrainList')
+data.setCell(2, 3, 80);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'testLogin')
 data.setCell(3, 2, 'com.yanxiu.test.TestLogin')
-data.setCell(3, 3, 303);
+data.setCell(3, 3, 61);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testTrainList')
-data.setCell(4, 2, 'com.yanxiu.test.TestTrainList')
-data.setCell(4, 3, 170);
+data.setCell(4, 1, 'testLogin')
+data.setCell(4, 2, 'com.yanxiu.test.TestLogin')
+data.setCell(4, 3, 42);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testLogin')
-data.setCell(5, 2, 'com.yanxiu.test.TestLogin')
-data.setCell(5, 3, 129);
+data.setCell(5, 1, 'testTrainList')
+data.setCell(5, 2, 'com.yanxiu.test.TestTrainList')
+data.setCell(5, 3, 39);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'testLogin')
 data.setCell(6, 2, 'com.yanxiu.test.TestLogin')
-data.setCell(6, 3, 120);
+data.setCell(6, 3, 34);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -419,51 +420,51 @@ return data;
               <div class="chronological-class-name">com.yanxiu.test.TestLogin</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">131 ms</span>
+                <span class="method-start">219 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testLogin(testLoginwithCorrectInfo, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&passw...)</span>
-                <span class="method-start">231 ms</span>
+                <span class="method-start">342 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testLogin(testLoginwithIncorrectPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com...)</span>
-                <span class="method-start">1507 ms</span>
+                <span class="method-start">1436 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testLogin(testLoginwithNonExistUser, http://u.yanxiu.com/login.json, GET, loginName=XY78&password=123456&token...)</span>
-                <span class="method-start">1813 ms</span>
+                <span class="method-start">1499 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testLogin(testLoginWithoutLoginName, http://u.yanxiu.com/login.json, GET, password=123456&token=, {"$schema":"...)</span>
-                <span class="method-start">2198 ms</span>
+                <span class="method-start">1543 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testLogin(testLoginWithoutPassword, http://u.yanxiu.com/login.json, GET, loginName=XY02735506@yanxiu.com&token...)</span>
-                <span class="method-start">2321 ms</span>
+                <span class="method-start">1579 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.yanxiu.test.TestTrainList</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">2452 ms</span>
+                <span class="method-start">1733 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testTrainList(testTrainMultiProjects, http://mobile.yanxiu.com/v20/api/guopei/trainlist, GET, os=0&ver=2.0&token=5...)</span>
-                <span class="method-start">2647 ms</span>
+                <span class="method-start">1832 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testTrainList(testTrainHasNoProject, http://mobile.yanxiu.com/v20/api/guopei/trainlist, GET, os=0&ver=2.0&token=b7...)</span>
-                <span class="method-start">2823 ms</span>
+                <span class="method-start">1919 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.yanxiu.test.TestLogin</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">4459 ms</span>
+                <span class="method-start">1961 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

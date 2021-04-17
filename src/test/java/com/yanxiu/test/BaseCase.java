@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +27,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.yaml.snakeyaml.Yaml;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.fge.jsonschema.core.exceptions.ProcessingException;
@@ -141,8 +143,12 @@ public class BaseCase {
 	public void tearDown() throws ResourceNotFoundException, ParseErrorException, Exception{
 		
         System.out.println("this is after test");
-		context.put("objs", result); 
-
+		context.put("objs", result);
+		
+	       java.text.DateFormat format1 = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	        String date = format1.format(new Date());
+	       
+        context.put("date", date);
 
 		StringWriter writer = new StringWriter();
 		//转换输出 
@@ -160,4 +166,30 @@ public class BaseCase {
 		System.out.println(writer.toString());
 
 	}
+	public void runCase(String name, String url, String method, String param,
+			JSONObject expected) throws JsonProcessingException, IOException, ProcessingException{
+		if (method.equals("GET")) {
+			ResponseResult responseResult = HttpHelper.doGet(url + "?" + param);
+			JSONObject actual = responseResult.getBody();
+
+			ObjectMapper mapper = new ObjectMapper();
+			JsonNode exp = mapper.readTree(expected.toString());
+			JsonNode act = mapper.readTree(actual.toString());
+			
+			JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
+			// ProcessingReport re =
+			// factory.getSyntaxValidator().validateSchema(exp);
+			// System.out.println(re);
+			JsonSchema schema = factory.getJsonSchema(exp);
+			ProcessingReport report;
+			
+			
+			report = schema.validate(act);
+			String testResult = report.isSuccess()?"PASS":"FAIL";
+			 result.add(new Report(name,testResult,report.isSuccess()?"N/A":report.toString()));
+			Assert.assertTrue(report.isSuccess(), report.toString());
+
+			 
+	}
+}
 }

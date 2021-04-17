@@ -190,28 +190,7 @@ public class TestLogin extends BaseCase{
 			JSONObject expected) throws ClientProtocolException, IOException,
 			JSONException, InterruptedException, ProcessingException {
 		
-		if (method.equals("GET")) {
-			ResponseResult responseResult = HttpHelper.doGet(url + "?" + param);
-			JSONObject actual = responseResult.getBody();
-
-			ObjectMapper mapper = new ObjectMapper();
-			JsonNode exp = mapper.readTree(expected.toString());
-			JsonNode act = mapper.readTree(actual.toString());
-			
-			JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
-			// ProcessingReport re =
-			// factory.getSyntaxValidator().validateSchema(exp);
-			// System.out.println(re);
-			JsonSchema schema = factory.getJsonSchema(exp);
-			ProcessingReport report;
-			
-			
-			report = schema.validate(act);
-			String testResult = report.isSuccess()?"PASS":"FAIL";
-			 result.add(new Report(name,testResult,report.isSuccess()?"N/A":report.toString()));
-			Assert.assertTrue(report.isSuccess(), report.toString());
-
-			 
+		    super.runCase(name, url, method, param, expected);
 			// JSONCompareResult result = JSONCompare.compareJSON(expected,
 			// actual, JSONCompareMode.LENIENT);
 			//
@@ -240,4 +219,4 @@ public class TestLogin extends BaseCase{
 	// public void tearDown() throws IOException {
 	//
 	// }
-}
+

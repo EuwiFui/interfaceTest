@@ -1,6 +1,8 @@
 <html> 
 <title>test result</title> 
 <body> 
+<h1 align="center">Test Result</h1>
+<h4 >$date<h4>
 <table border="1">
 <tr>
 <td>id</td>
