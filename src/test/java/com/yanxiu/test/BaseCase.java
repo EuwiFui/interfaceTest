@@ -151,6 +151,8 @@ public class BaseCase {
 		  if(!resultFile.exists()){
 			  resultFile.createNewFile();
 		  }
+		  else
+		  {resultFile.delete();}
 		  FileWriter fileWritter = new FileWriter(resultFile.getName(),true);
         BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
         bufferWritter.write(writer.toString());
