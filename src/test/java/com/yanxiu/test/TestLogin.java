@@ -178,7 +178,7 @@ public class TestLogin {
 
 	@DataProvider(name = "loginInfo")
 	public Object[][] getLgoinInfo() {
-		final String fileName = "/test.yaml";
+		final String fileName = "test.yaml";
 		
 		Yaml yaml = new Yaml();
 		List<Map<String, Object>> testcases = new ArrayList<Map<String, Object>>();
