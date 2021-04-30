@@ -1,0 +1,655 @@
+- name: 16平台考核列表
+  method: GET
+  uri: http://mobile.yanxiu.com/v20/api/guopei/examine
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456
+  param:
+     pid: 1848
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string"
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "BaseBeanCreateTime": {
+          "type": "integer"
+        },
+        "totalfficial": {
+          "type": "string",
+          "enum": ["100"]
+        },
+        "totalscore": {
+          "type": "string"
+        },
+        "bounstotal": {
+          "type": "string"
+        },
+        "pofficial": {
+          "type": "string"
+        },
+        "punofficial": {
+          "type": "string"
+        },
+        "userGetScore": {
+          "type": "string"
+        },
+        "bounsscore": {
+          "type": "string"
+        },
+        "bounsdailylimit": {
+          "type": "string"
+        },
+        "isContainsTeacher": {
+          "type": "boolean"
+        },
+        "level": {
+          "type": "integer"
+        },
+        "w": {
+          "type": "integer"
+        },
+        "checkway": {
+          "type": "integer"
+        },
+        "uRank": {
+          "type": "string"
+        },
+        "bounsdaily": {
+          "type": "integer"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "ptotalscore": {
+          "type": "string"
+        },
+        "isPass": {
+          "type": "integer",
+          "enum": [0,1]
+        },
+        "bounsVo": {
+          "type": "object",
+          "properties": {
+            "publishBlog": {
+              "type": "string"
+            },
+            "publishHomework": {
+              "type": "string"
+            },
+            "uploadRes": {
+              "type": "string"
+            },
+            "publishWenda": {
+              "type": "string"
+            },
+            "timeCourse": {
+              "type": "string"
+            },
+            "mark": {
+              "type": "string"
+            },
+            "comment": {
+              "type": "string"
+            },
+            "followUser": {
+              "type": "string"
+            },
+            "joinAnswering": {
+              "type": "string"
+            },
+            "joinActive": {
+              "type": "string"
+            },
+            "commentEd": {
+              "type": "string"
+            },
+            "tuiyouEdHomework": {
+              "type": "string"
+            },
+            "tuiyouEdResource": {
+              "type": "string"
+            },
+            "downloadEdRes": {
+              "type": "string"
+            },
+            "bouns1": {
+              "type": "string"
+            },
+            "bouns2": {
+              "type": "string"
+            },
+            "bouns3": {
+              "type": "string"
+            },
+            "bounstotal": {
+              "type": "string"
+            },
+            "bounsscore": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "publishBlog",
+            "publishHomework",
+            "uploadRes",
+            "publishWenda",
+            "timeCourse",
+            "mark",
+            "comment",
+            "followUser",
+            "joinAnswering",
+            "joinActive",
+            "commentEd",
+            "tuiyouEdHomework",
+            "tuiyouEdResource",
+            "downloadEdRes",
+            "bouns1",
+            "bouns2",
+            "bouns3",
+            "bounstotal",
+            "bounsscore"
+          ]
+        },
+        "leadingVoList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "isfinish": {
+                "type": "integer",
+                 "enum": [0,1]
+              },
+              "userscore": {
+                "type": "string"
+              },
+              "totalscore": {
+                "type": "string"
+              },
+              "enddate": {
+                "type": "string"
+              },
+              "toolExamineVoList": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "toolid": {
+                      "type": "integer",
+                       "enum": [201,202,203,216,218]
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "finishnum": {
+                      "type": "integer"
+                    },
+                    "totalnum": {
+                      "type": "integer"
+                    },
+                    "userscore": {
+                      "type": "string"
+                    },
+                    "totalscore": {
+                      "type": "string"
+                    },
+                    "isneedmark": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "toolid",
+                    "name",
+                    "finishnum",
+                    "totalnum",
+                    "userscore",
+                    "totalscore",
+                    "isneedmark"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "isfinish",
+              "userscore",
+              "totalscore",
+              "enddate",
+              "toolExamineVoList"
+            ]
+          }
+        },
+        "bounsVoList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "isfinish": {
+                "type": "integer",
+                 "enum": [0,1]
+              },
+              "userscore": {
+                "type": "string"
+              },
+              "totalscore": {
+                "type": "string"
+              },
+              "enddate": {
+                "type": "string"
+              },
+              "toolid": {
+                "type": "integer"
+              },
+              "finishnum": {
+                "type": "integer"
+              },
+              "totalnum": {
+                "type": "integer"
+              },
+              "isneedmark": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "isfinish",
+              "userscore",
+              "totalscore",
+              "enddate",
+              "toolid",
+              "finishnum",
+              "totalnum",
+              "isneedmark"
+            ]
+          }
+        }
+      },
+      "required": [
+        "BaseBeanCreateTime",
+        "totalfficial",
+        "totalscore",
+        "bounstotal",
+        "pofficial",
+        "punofficial",
+        "userGetScore",
+        "bounsscore",
+        "bounsdailylimit",
+        "isContainsTeacher",
+        "level",
+        "w",
+        "checkway",
+        "uRank",
+        "bounsdaily",
+        "userName",
+        "ptotalscore",
+        "isPass",
+        "bounsVo",
+        "leadingVoList",
+        "bounsVoList"
+      ]
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc",
+    "body"
+  ]
+}
+
+
+
+- name: 15平台考核列表
+  method: GET
+  uri: http://mobile.yanxiu.com/v20/api/guopei/examine
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456
+  param:
+     pid: 1847
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string"
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "BaseBeanCreateTime": {
+          "type": "integer"
+        },
+        "totalfficial": {
+          "type": "string",
+          "enum": ["100"]
+        },
+        "totalscore": {
+          "type": "string"
+        },
+        "bounstotal": {
+          "type": "string"
+        },
+        "pofficial": {
+          "type": "string"
+        },
+        "punofficial": {
+          "type": "string"
+        },
+        "userGetScore": {
+          "type": "string"
+        },
+        "bounsscore": {
+          "type": "string"
+        },
+        "bounsdailylimit": {
+          "type": "string"
+        },
+        "isContainsTeacher": {
+          "type": "boolean"
+        },
+        "level": {
+          "type": "integer"
+        },
+        "w": {
+          "type": "integer"
+        },
+        "checkway": {
+          "type": "integer"
+        },
+        "uRank": {
+          "type": "string"
+        },
+        "bounsdaily": {
+          "type": "integer"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "ptotalscore": {
+          "type": "string"
+        },
+        "isPass": {
+          "type": "integer",
+          "enum": [0,1]
+        },
+        "bounsVo": {
+          "type": "object",
+          "properties": {
+            "publishBlog": {
+              "type": "string"
+            },
+            "publishHomework": {
+              "type": "string"
+            },
+            "uploadRes": {
+              "type": "string"
+            },
+            "publishWenda": {
+              "type": "string"
+            },
+            "timeCourse": {
+              "type": "string"
+            },
+            "mark": {
+              "type": "string"
+            },
+            "comment": {
+              "type": "string"
+            },
+            "followUser": {
+              "type": "string"
+            },
+            "joinAnswering": {
+              "type": "string"
+            },
+            "joinActive": {
+              "type": "string"
+            },
+            "commentEd": {
+              "type": "string"
+            },
+            "tuiyouEdHomework": {
+              "type": "string"
+            },
+            "tuiyouEdResource": {
+              "type": "string"
+            },
+            "downloadEdRes": {
+              "type": "string"
+            },
+            "bouns1": {
+              "type": "string"
+            },
+            "bouns2": {
+              "type": "string"
+            },
+            "bouns3": {
+              "type": "string"
+            },
+            "bounstotal": {
+              "type": "string"
+            },
+            "bounsscore": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "publishBlog",
+            "publishHomework",
+            "uploadRes",
+            "publishWenda",
+            "timeCourse",
+            "mark",
+            "comment",
+            "followUser",
+            "joinAnswering",
+            "joinActive",
+            "commentEd",
+            "tuiyouEdHomework",
+            "tuiyouEdResource",
+            "downloadEdRes",
+            "bouns1",
+            "bouns2",
+            "bouns3",
+            "bounstotal",
+            "bounsscore"
+          ]
+        },
+        "leadingVoList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "isfinish": {
+                "type": "integer",
+                 "enum": [0,1]
+              },
+              "userscore": {
+                "type": "string"
+              },
+              "totalscore": {
+                "type": "string"
+              },
+              "enddate": {
+                "type": "string"
+              },
+              "toolExamineVoList": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "toolid": {
+                      "type": "integer",
+                       "enum": [201,202,203,216,218]
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "finishnum": {
+                      "type": "integer"
+                    },
+                    "totalnum": {
+                      "type": "integer"
+                    },
+                    "userscore": {
+                      "type": "string"
+                    },
+                    "totalscore": {
+                      "type": "string"
+                    },
+                    "isneedmark": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "toolid",
+                    "name",
+                    "finishnum",
+                    "totalnum",
+                    "userscore",
+                    "totalscore",
+                    "isneedmark"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "isfinish",
+              "userscore",
+              "totalscore",
+              "enddate",
+              "toolExamineVoList"
+            ]
+          }
+        },
+        "bounsVoList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "isfinish": {
+                "type": "integer",
+                 "enum": [0,1]
+              },
+              "userscore": {
+                "type": "string"
+              },
+              "totalscore": {
+                "type": "string"
+              },
+              "enddate": {
+                "type": "string"
+              },
+              "toolid": {
+                "type": "integer"
+              },
+              "finishnum": {
+                "type": "integer"
+              },
+              "totalnum": {
+                "type": "integer"
+              },
+              "isneedmark": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "isfinish",
+              "userscore",
+              "totalscore",
+              "enddate",
+              "toolid",
+              "finishnum",
+              "totalnum",
+              "isneedmark"
+            ]
+          }
+        }
+      },
+      "required": [
+        "BaseBeanCreateTime",
+        "totalfficial",
+        "totalscore",
+        "bounstotal",
+        "pofficial",
+        "punofficial",
+        "userGetScore",
+        "bounsscore",
+        "bounsdailylimit",
+        "isContainsTeacher",
+        "level",
+        "w",
+        "checkway",
+        "uRank",
+        "bounsdaily",
+        "userName",
+        "ptotalscore",
+        "isPass",
+        "bounsVo",
+        "leadingVoList",
+        "bounsVoList"
+      ]
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc",
+    "body"
+  ]
+}

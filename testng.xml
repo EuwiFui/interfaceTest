@@ -3,8 +3,8 @@
 <suite name="Default suite">
   <test verbose="0" name="Default test">
     <classes>
-      <class name="com.yanxiu.test.TestLogin"/>
-		 <class name="com.yanxiu.test.TestTrainList"/>
+      <class name="com.yanxiu.test.TestCase"/>
+
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Default suite -->

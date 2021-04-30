@@ -60,11 +60,12 @@ import org.json.JSONObject;
 				}
 				response.close();
 				client.close();
-				return responseResult;
+				
 			}
+
 			
 					
-			return null;
+			return responseResult;
 		}
 //		public HttpHelper(String url, String method) {
 //			if (method.equals("GET")) {

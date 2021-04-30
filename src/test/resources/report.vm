@@ -1,0 +1,83 @@
+<html> 
+<title>测试报告</title> 
+<body> 
+<h1 align="center">测试报告</h1>
+<h4 >测试时间：$date<h4>
+
+
+<table border="1" cellspacing="0" cellpadding="0">
+<tr>
+<td width="32">编号</td>
+<td width="200">接口</td>
+<td width="200">用例名称</td>
+<td width="64">请求方式</td>
+<td width="64">参数</td>
+<td width="64">返回值</td>
+<td width="64">测试结果</td>
+
+
+</tr>
+<tr>
+
+
+<tbody>
+#foreach( $obj in $objs )
+    <tr>
+    <td>$velocityCount</td>
+    <td>$obj.url</td>
+    <td>$obj.name</td>
+	<td>$obj.method</td>
+	<td>$obj.params</td>
+    <td>$obj.statusCode</td>
+	#if($obj.result=="FAIL")
+    <td ><font color="red">$obj.result</font></td>
+    #end
+    	#if($obj.result=="PASS")
+    <td >$obj.result</td>
+    #end
+    
+    </tr>
+
+#end
+<tbody>
+</tr>
+</table>
+
+
+<!--
+
+<table border="1" cellspacing="0" cellpadding="0">
+<tr>
+<td width="32"><a href=# title="这里是显示的文字">hello编号</a></td>
+<td width="200">接口</td>
+<td width="200">用例名称</td>
+<td width="64">请求方式</td>
+<td width="64">参数</td>
+<td width="64">测试结果</td>
+
+
+</tr>
+  #foreach ( $row in [$table.row0..$table.rowEnd])
+    <tr>
+     <td>$velocityCount</td>
+    #foreach ( $col in [$table.col0..$table.colEnd])
+   
+      #if ( $table.isVisible($row, $col) )
+        #if ( $table.isDefaultCell($row, $col) )
+          <td> </td>
+        #else
+          #set ( $cell = $table.getCell($row, $col) )
+          <td rowspan="$cell.rowSpan"
+              colspan="$cell.colSpan"
+              align="left"> $cell.name
+          </td>
+
+        #end
+      #end
+    #end
+  #end
+</table>
+-->
+
+</body>
+</html>

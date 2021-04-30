@@ -1,0 +1,91 @@
+- name: 热点列表
+  method: GET
+  uri: http://mobile.yanxiu.com/api/notice/getMessages
+  token: 
+     loginName: test2016@yanxiu.com
+     password: 123456
+  param:
+     pageSize: 10
+     pageNo: 1 
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "enum": ["0"]
+    },
+    "desc": {
+      "type": "string"
+    },
+    "debug": {
+      "type": "string"
+    },
+    "total": {
+      "type": "integer"
+    },
+    "body": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "integer",
+            "enum": [1,2,3,4,5]
+          },
+          "projectId": {
+            "type": "integer"
+          },
+          "projectName": {
+            "type": "string"
+          },
+          "receiverUid": {
+            "type": "integer"
+          },
+          "linkUrl": {
+            "type": "string"
+          },
+          "publishTime": {
+            "type": "string"
+          },
+          "timer": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "enum": [1,0]
+          },
+          "objectId": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "type",
+          "projectId",
+          "projectName",
+          "receiverUid",
+          "linkUrl",
+          "publishTime",
+          "timer",
+          "status",
+          "objectId"
+        ]
+      }
+    }
+  },
+  "required": [
+    "code",
+    "desc",
+    "debug",
+    "total",
+    "body"
+  ]
+}

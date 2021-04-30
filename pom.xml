@@ -91,6 +91,15 @@
     <artifactId>velocity</artifactId>
     <version>1.7</version>
 </dependency>
+
+
+<dependency>
+    <groupId>org.mla.html</groupId>
+    <artifactId>htmltable</artifactId>
+    <version>1.0</version>
+    <scope>system</scope>
+    <systemPath>${project.basedir}/libs/htmltable.jar</systemPath>
+</dependency>
   </dependencies>
 
 
@@ -109,7 +118,7 @@
                         <suiteXmlFile>${xmlFileName}</suiteXmlFile>
                     </suiteXmlFiles>
 
-					
+
                 </configuration>
             </plugin>
  

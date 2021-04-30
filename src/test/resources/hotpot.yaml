@@ -1,0 +1,90 @@
+- name: 热点列表
+  method: GET
+  uri: http://mobile.yanxiu.com/api/notice/getHotspots
+  token: 
+     loginName: test2016@yanxiu.com
+     password: 123456
+  param:
+     pageSize: 10
+     pageNo: 1 
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "enum": ["0"]
+    },
+    "desc": {
+      "type": "string"
+    },
+    "debug": {
+      "type": "string"
+    },
+    "total": {
+      "type": "integer"
+    },
+    "body": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "integer"
+          },
+          "picUrl": {
+            "type": "null"
+          },
+          "linkUrl": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "enum": [0,1]
+          },
+          "publishTime": {
+            "type": "string"
+          },
+          "timer": {
+            "type": "string"
+          },
+          "endTime": {
+            "type": "integer"
+          },
+          "receiverUid": {
+            "type": "integer"
+          },
+          "objectId": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "projectId",
+          "picUrl",
+          "linkUrl",
+          "status",
+          "publishTime",
+          "timer",
+          "endTime",
+          "receiverUid",
+          "objectId"
+        ]
+      }
+    }
+  },
+  "required": [
+    "code",
+    "desc",
+    "debug",
+    "total",
+    "body"
+  ]
+}

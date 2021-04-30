@@ -25,8 +25,9 @@
     <td>$obj.name</td>
 	<td>$obj.method</td>
 	<td>$obj.params</td>
-    <td>$obj.result</td>
-    
+	#if($obj.result=="FAIL")
+    <td ><font color="red">$obj.result</font></td>
+    #end
     </tr>
 
 #end

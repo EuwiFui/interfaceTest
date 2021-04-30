@@ -5,6 +5,13 @@ public class Report {
 	private String name;
 	private String params;
 	private String method;
+	private int statusCode;
+	public int getStatusCode() {
+		return statusCode;
+	}
+	public void setStatusCode(int statusCode) {
+		this.statusCode = statusCode;
+	}
 	public String getParams() {
 		return params;
 	}
@@ -45,13 +52,14 @@ public class Report {
 		this.reason = reason;
 	}
 	
-	public Report(String url,String name,String method,String param,String result,String reason){
+	public Report(String url,String name,String method,String param,int statusCode,String result,String reason){
 		this.url = url;
 		this.name = name;
 		this.result = result;
 		this.reason = reason;
 		this.method = method;
 		this.params = param;
+		this.statusCode = statusCode;
 	}
 
 }
