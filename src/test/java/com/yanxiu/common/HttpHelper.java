@@ -2,6 +2,7 @@ package com.yanxiu.common;
 
 
 	import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +11,7 @@ import java.util.Map;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -105,5 +107,41 @@ import org.json.JSONObject;
 //			httpclient.close();
 //		}
 
+		public static ResponseResult doPost(String url,List<BasicNameValuePair> body) throws ClientProtocolException, IOException{
+			List<BasicNameValuePair> headers = new ArrayList<>();
+			return doPost(url,headers,body);
+		}	
+		public static ResponseResult doPost(String url,List<BasicNameValuePair> headers,List<BasicNameValuePair> body) throws ClientProtocolException, IOException{
+			HttpPost post = new HttpPost(url);
+			ResponseResult responseResult = new ResponseResult();
+			for(BasicNameValuePair header:headers){
+				post.setHeader(header.getName(), header.getValue());
+			}
+			CloseableHttpClient client = HttpClients.createDefault();
+			post.setEntity(new UrlEncodedFormEntity(body));
+			
+			CloseableHttpResponse response = client.execute(post);
+			JSONObject result = null;
+			responseResult.setStatus_code(response.getStatusLine().getStatusCode());
+			if(response.getStatusLine().getStatusCode()==HttpStatus.SC_OK){
+				String ret = EntityUtils.toString(response.getEntity());
+				
+				try {
+					result = new JSONObject(ret);
+					responseResult.setBody(result);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				response.close();
+				client.close();
+				
+			}
+
+			
+					
+			return responseResult;
+			
+		}
 	}
 

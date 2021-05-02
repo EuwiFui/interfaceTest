@@ -1,0 +1,81 @@
+- name: 获取启动热点列表
+  method: POST
+  uri: http://mobile.yanxiu.com/v20/api/main/getRotateList
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456 
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string"
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "rotates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "BaseBeanCreateTime": {
+            "type": "integer"
+          },
+          "begintime": {
+            "type": "string"
+          },
+          "endtime": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "resurl": {
+            "type": "null"
+          },
+          "startpageurl": {
+            "type": "string"
+          },
+          "typelink": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "null"
+          },
+          "accessId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "BaseBeanCreateTime",
+          "begintime",
+          "endtime",
+          "id",
+          "name",
+          "resurl",
+          "startpageurl",
+          "typelink",
+          "projectId",
+          "accessId"
+        ]
+      }
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc",
+    "rotates"
+  ]
+}

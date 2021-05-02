@@ -1,10 +1,12 @@
 package com.yanxiu.test;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.velocity.exception.ParseErrorException;
 import org.apache.velocity.exception.ResourceNotFoundException;
 import org.json.JSONObject;
@@ -57,23 +59,31 @@ public class TestCase {
 			infos.add(url);
 			String method = (String) testcases.get(i).get("method");
 			infos.add(method);
+			StringBuilder params = new StringBuilder();
+			try{
 			Map<String, String> param = (Map<String, String>) testcases.get(i).get("param");
 
-			StringBuilder params = new StringBuilder();
+			
 			for (String key : param.keySet()) {
-				params.append(key + "=" + String.valueOf(param.get(key)) + "&");
+				params.append(key + "=" + URLEncoder.encode(String.valueOf(param.get(key)),"UTF-8") + "&");
 			}
-
+			}catch(Exception e){
+				
+			}
 			String token = "";
 			Map<String, String> tokenInfo = (Map<String, String>) testcases.get(i).get("token");
 			if (tokenInfo != null) {
 				String loginName = String.valueOf(tokenInfo.get("loginName"));
 				String password = String.valueOf(tokenInfo.get("password"));
 				token = TestCaseUtils.getToken(loginName, password);
+				params.append("token=" + token);
 			}
-			params.append("token=" + token);
+			
+			if(params.lastIndexOf("&")==params.length()-1){
+				infos.add(params.substring(0, params.length()-1));
+			}else{
 			infos.add(params.toString());
-
+			}
 			// System.out.println(testcases.get(i).get("expected"));
 			Map<String, Object> exp = (Map<String, Object>) testcases.get(i).get("expected");
 			JSONObject expected = new JSONObject(exp);
@@ -114,10 +124,20 @@ public class TestCase {
 	@Test(dataProvider = "paramsInfo")
 	public void testCase(String name, String url, String method, String param, JSONObject expected)
 			throws JsonProcessingException, IOException, ProcessingException {
-
-		if (method.equals("GET")) {
-			ResponseResult responseResult = HttpHelper.doGet(url + "?" + param);
+		ResponseResult responseResult = null;
+//		System.out.println("#######"+param);
+		if (method.equals("GET")) 
+		 responseResult = HttpHelper.doGet(url + "?" + param);
+		else if(method.equals("POST")){
+			List<BasicNameValuePair> body = new ArrayList<BasicNameValuePair>();
+			String[] params = param.split("&");
+			for(int i=0;i<params.length;i++){
+				body.add(new BasicNameValuePair(params[i].split("=")[0],params[i].split("=")[1]));
+			}
+			responseResult = HttpHelper.doPost(url, body);
+		}
 			if (responseResult.getStatus_code() == 200) {
+//				System.out.println("@@@@@@@@@"+responseResult.getBody());
 				JSONObject actual = responseResult.getBody();
 
 				ObjectMapper mapper = new ObjectMapper();
@@ -139,11 +159,13 @@ public class TestCase {
 						"status code is not 200"));
 				Assert.assertTrue(false);
 			}
-		}
+		
+
 	}
 
 	@AfterTest
 	public void tearDown() throws ResourceNotFoundException, ParseErrorException, Exception {
 		utils.generateReport();
+		utils.writeResultToExcel();
 	}
 }

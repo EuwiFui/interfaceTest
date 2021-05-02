@@ -1,6 +1,6 @@
 - name: 热点列表
   method: GET
-  uri: http://mobile.yanxiu.com/api/notice/getMessages
+  uri: http://mobile.yanxiu.com/v20/api/notice/getMessages
   token: 
      loginName: test2016@yanxiu.com
      password: 123456

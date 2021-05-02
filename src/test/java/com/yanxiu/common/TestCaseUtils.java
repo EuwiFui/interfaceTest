@@ -23,7 +23,7 @@ public class TestCaseUtils {
 		File configFileDir = new File(configFilePath);
 		String[] allFileNames = configFileDir.list();
 		
-		System.out.println(allFileNames);
+	
 		for(int i=0;i<allFileNames.length;i++){
 			String prefix=allFileNames[i].substring(allFileNames[i].lastIndexOf(".")+1);
 			if(prefix.equalsIgnoreCase("yaml")){
@@ -71,7 +71,7 @@ public class TestCaseUtils {
 		String url = "http://u.yanxiu.com/login.json";
 		ResponseResult responseResult = HttpHelper.doGet(url + "?loginName=" + loginName+"&password="+password);
 		JSONObject body = responseResult.getBody();
-		System.out.println(body);
+		
 		token = body.getString("token");
 		return token;
 	}

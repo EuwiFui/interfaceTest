@@ -1,0 +1,611 @@
+- name: 收藏资源
+  method: POST
+  uri: http://mobile.yanxiu.com/v20/api/resource/collection
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456
+  param:
+     aid: 23141297
+     iscollection: 0    
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string",
+      "enum": ["0","1"]
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc"
+  ]
+}
+
+- name: 删除资源
+  method: POST
+  uri: http://mobile.yanxiu.com/v20/api/resource/collection
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456
+  param:
+     aid: 23141297
+     iscollection: 1  
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string",
+      "enum": ["0","1"]
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc"
+  ]
+}
+
+
+
+
+- name: 全部资源列表
+  method: GET
+  uri: http://mobile.yanxiu.com/v20/api/search/search
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456
+  param:
+     condition: {"interf":"SearchFilter","source":"android"}
+     pageindex: 1  
+     pagesize: 20
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string"
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "BaseBeanCreateTime": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "filetype": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "filesize": {
+            "type": "string"
+          },
+          "uid": {
+            "type": "string"
+          },
+          "uname": {
+            "type": "string"
+          },
+          "pointstr": {
+            "type": "string"
+          },
+          "downnum": {
+            "type": "string"
+          },
+          "area": {
+            "type": "string"
+          },
+          "readnum": {
+            "type": "string"
+          },
+          "makercount": {
+            "type": "string"
+          },
+          "sharetype": {
+            "type": "string"
+          },
+          "point": {
+            "type": "string"
+          },
+          "description": {
+            "type": "null"
+          },
+          "reviewCnt": {
+            "type": "string"
+          },
+          "shareCnt": {
+            "type": "string"
+          },
+          "typeid": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "isCollection": {
+            "type": "string"
+          },
+          "is_translated": {
+            "type": "string"
+          },
+          "pointCount": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "BaseBeanCreateTime",
+          "id",
+          "filename",
+          "filetype",
+          "time",
+          "filesize",
+          "uid",
+          "uname",
+          "pointstr",
+          "downnum",
+          "area",
+          "readnum",
+          "makercount",
+          "sharetype",
+          "point",
+          "description",
+          "reviewCnt",
+          "shareCnt",
+          "typeid",
+          "url",
+          "isCollection",
+          "is_translated",
+          "pointCount"
+        ]
+      }
+    },
+    "total": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc",
+    "data",
+    "total"
+  ]
+}
+
+
+- name: 搜索资源-有结果
+  method: GET
+  uri: http://mobile.yanxiu.com/v20/api/search/search
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456
+  param:
+     condition: {"interf":"SearchKeywords","source":"android"}
+     pageindex: 1  
+     pagesize: 10
+     keyWord: .doc
+  expected:  {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string"
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "BaseBeanCreateTime": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "filetype": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "filesize": {
+            "type": "string"
+          },
+          "uid": {
+            "type": "string"
+          },
+          "uname": {
+            "type": "string"
+          },
+          "pointstr": {
+            "type": "string"
+          },
+          "downnum": {
+            "type": "string"
+          },
+          "area": {
+            "type": "string"
+          },
+          "readnum": {
+            "type": "string"
+          },
+          "makercount": {
+            "type": "string"
+          },
+          "sharetype": {
+            "type": "string"
+          },
+          "point": {
+            "type": "string"
+          },
+          "description": {
+            "type": "null"
+          },
+          "reviewCnt": {
+            "type": "string"
+          },
+          "shareCnt": {
+            "type": "string"
+          },
+          "typeid": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "isCollection": {
+            "type": "string"
+          },
+          "is_translated": {
+            "type": "string"
+          },
+          "pointCount": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "BaseBeanCreateTime",
+          "id",
+          "filename",
+          "filetype",
+          "time",
+          "filesize",
+          "uid",
+          "uname",
+          "pointstr",
+          "downnum",
+          "area",
+          "readnum",
+          "makercount",
+          "sharetype",
+          "point",
+          "description",
+          "reviewCnt",
+          "shareCnt",
+          "typeid",
+          "url",
+          "isCollection",
+          "is_translated",
+          "pointCount"
+        ]
+      }
+    },
+    "total": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc",
+    "data",
+    "total"
+  ]
+}
+
+
+- name: 搜索资源-无结果
+  method: GET
+  uri: http://mobile.yanxiu.com/v20/api/search/search
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456
+  param:
+     condition: {"interf":"SearchKeywords","source":"android"}
+     pageindex: 1  
+     pagesize: 10
+     keyWord: hkhjfheudhskshdhegsjddh
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string",
+      "enum": ["0"]
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": {}
+    },
+    "total": {
+      "type": "string",
+      "enum": ["0"]
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc",
+    "data",
+    "total"
+  ]
+}
+
+
+- name: 搜索资源-关键字为空
+  method: GET
+  uri: http://mobile.yanxiu.com/v20/api/search/search
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456
+  param:
+     condition: {"interf":"SearchKeywords","source":"android"}
+     pageindex: 1  
+     pagesize: 10
+     keyWord: " "
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string",
+      "enum": ["0"]
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": {}
+    },
+    "total": {
+      "type": "string",
+      "enum": ["0"]
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc",
+    "data",
+    "total"
+  ]
+}
+
+
+- name: 搜索资源-精确搜索
+  method: GET
+  uri: http://mobile.yanxiu.com/v20/api/search/search
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456
+  param:
+     condition: {"interf":"SearchKeywords","source":"android"}
+     pageindex: 1  
+     pagesize: 10
+     keyWord: 为什么说中国学校无法复制美国教育.docx
+  expected: {
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "BaseBeanCreateTime": {
+      "type": "integer"
+    },
+    "code": {
+      "type": "string"
+    },
+    "debugDesc": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "BaseBeanCreateTime": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string",
+            "enum": ["为什么说中国学校无法复制美国教育.docx"]
+          },
+          "filetype": {
+            "type": "string",
+            "enum": [word]
+          },
+          "time": {
+            "type": "string"
+          },
+          "filesize": {
+            "type": "string"
+          },
+          "uid": {
+            "type": "string"
+          },
+          "uname": {
+            "type": "string"
+          },
+          "pointstr": {
+            "type": "string"
+          },
+          "downnum": {
+            "type": "string"
+          },
+          "area": {
+            "type": "string"
+          },
+          "readnum": {
+            "type": "string"
+          },
+          "makercount": {
+            "type": "string"
+          },
+          "sharetype": {
+            "type": "string"
+          },
+          "point": {
+            "type": "string"
+          },
+          "description": {
+            "type": "null"
+          },
+          "reviewCnt": {
+            "type": "string"
+          },
+          "shareCnt": {
+            "type": "string"
+          },
+          "typeid": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "isCollection": {
+            "type": "string"
+          },
+          "is_translated": {
+            "type": "string"
+          },
+          "pointCount": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "BaseBeanCreateTime",
+          "id",
+          "filename",
+          "filetype",
+          "time",
+          "filesize",
+          "uid",
+          "uname",
+          "pointstr",
+          "downnum",
+          "area",
+          "readnum",
+          "makercount",
+          "sharetype",
+          "point",
+          "description",
+          "reviewCnt",
+          "shareCnt",
+          "typeid",
+          "url",
+          "isCollection",
+          "is_translated",
+          "pointCount"
+        ]
+      }
+    },
+    "total": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "BaseBeanCreateTime",
+    "code",
+    "debugDesc",
+    "desc",
+    "data",
+    "total"
+  ]
+}
+
+
+- name: 我的资源列表
+  method: GET
+  uri: http://mobile.yanxiu.com/v20/api/search/search
+  token: 
+     loginName: XY02735506@yanxiu.com
+     password: 123456
+  param:
+     pagesize: 20
+  expected:
