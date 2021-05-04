@@ -38,9 +38,6 @@
           "projectId": {
             "type": "integer"
           },
-          "picUrl": {
-            "type": "null"
-          },
           "linkUrl": {
             "type": "string"
           },

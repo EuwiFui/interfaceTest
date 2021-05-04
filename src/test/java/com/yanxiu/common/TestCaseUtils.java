@@ -76,4 +76,26 @@ public class TestCaseUtils {
 		return token;
 	}
 	
+	public static JSONObject modifyExpected(JSONObject expected,String dependency,String token) throws ClientProtocolException, IOException{
+		JSONObject modifiedExpected = null;
+		Dependency de = new Dependency();
+		
+		if(dependency.equals("projectId")){
+			List<String> pids = de.getProjectID(token);
+			String replacePid = "\"enum\": [";
+			for(int i=0;i<pids.size();i++){
+				replacePid+="\""+pids.get(i)+"\",";
+			}
+			replacePid+="null,\"0\"],";
+			System.out.println("@@@@@@@@"+replacePid);
+			String str = expected.toString().replace("\"projectId\":{", "\"projectId\":{"+replacePid);
+			
+			System.out.println("@@@@@@@@"+str);
+			modifiedExpected = new JSONObject(str);
+		}
+		System.out.println("#######3"+modifiedExpected);
+		return modifiedExpected;
+	}
+	
+	
 }
